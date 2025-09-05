@@ -1,12 +1,46 @@
 #include <iostream>
-using namespace std;
-
-int array_sum(int array[], int n);
+#include <vector>
+#include <ctime>
+#include "Vehicle.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
 
 int main(){
-    int array[] = {2, 4, 5, 7, 3, 1, 0};
-    int n = sizeof(array)/sizeof(array[0]);
+    int numVehicles;
+    std::cout << "how many cars?: " << std::endl;
+    std::cin >> numVehicles;
 
-    cout << "The sum of this array is:" << array_sum(array, n) << endl;
+    std::vector<Vehicle*> vehicles;
+
+    for (int i=0; i<numVehicles; ++i){
+        int id, type;
+        std::cout << "Please enter the ID of vehicle" << i << std::endl;
+        std::cin >> id;
+
+        std::cout << "Please enter vehicle types(1-car, 2-bus, 3-motorbike): " << std::endl;
+        std::cin >> type;
+
+        switch (type){
+            case 1:
+            vehicles.push_back(new Car(id));
+            break;
+            case 2:  
+            vehicles.push_back(new Bus(id));
+            break;
+            case 3:  
+            vehicles.push_back(new Motorbike(id));
+            break;
+        }
+
+    }
+
+    for(Vehicle* v : vehicles){
+        std::cout << "ID: " << v->getID() << " parcking time: " << v->getParkingDuration() << " seconds" << std::endl;
+        delete v;
+
+    }
+
     return 0;
+
 }
