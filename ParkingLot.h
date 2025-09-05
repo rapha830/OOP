@@ -10,7 +10,7 @@ class ParkingLot{
     std::vector<Vehicle*> vehicles;
     
     public:
-     ParkingLot(int capacity):maxCapacity(capacity), currentCapacity(0){};
+     ParkingLot(int capacity);
     ~ParkingLot();
 
     int getCount() const;
@@ -18,3 +18,5 @@ class ParkingLot{
     void unparkVehicle(int ID);
     int countOverstayingVehicles(int maxParkingDuration);
 };
+
+#endif
