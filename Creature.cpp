@@ -36,17 +36,17 @@ void Creature::printInfo() const {
   std::string typeName;
   switch (type) {
     case CreatureType::WARRIOR:
-      typeName = "WARRIOR";
+      typeName = "Warrior";
       break;
     case CreatureType::MAGE:
-      typeName = "MAGE";
+      typeName = "Mage";
       break;
     case CreatureType::ARCHER:
-      typeName = "ARCHER";
+      typeName = "Archer";
       break;
   }
-  std::cout << "Creature - " << name << " (Cost <" << cost << ">): Creature Type=<" 
-            << typeName << ">, Attack=<" << attack << ">, Defense=<" << defense << ">" << std::endl;
+  std::cout << "Creature - " << name << " (Cost " << cost << "): Creature Type=" 
+            << typeName << ", Attack=" << attack << ", Defense=" << defense << std::endl;
   // "Creature - <name> (Cost <cost>): Creature Type=<typeName>,
   // Attack=<attack>, Defense=<defense>"
 }

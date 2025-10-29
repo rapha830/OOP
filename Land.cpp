@@ -30,16 +30,16 @@ void Land::printInfo() const {
   std::string typeName;
   switch (landType) {
     case LandType::FOREST:
-      typeName = "FOREST";
+      typeName = "Forest";
       break;
     case LandType::MOUNTAIN:
-      typeName = "MOUNTAIN";
+      typeName = "Mountain";
       break;
     case LandType::SWAMP:
-      typeName = "SWAMP";
+      typeName = "Swamp";
       break;
   }
-  std::cout << "Land - <" << name << "> (Cost <" << cost << ">): <" << typeName << "> Land." << std::endl;
+  std::cout << "Land - " << name << " (Cost " << cost << "): " << typeName << " land." << std::endl;
   // "Land - <name> (Cost <cost>): <TypeName> land."
 }
 
